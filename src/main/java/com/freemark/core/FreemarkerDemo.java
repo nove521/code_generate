@@ -17,7 +17,7 @@ public class FreemarkerDemo {
     public static void main(String[] args) {
         Connct connct = new Connct("root","root","mtest");
         MySqldbOperate mySqldbOperate = new MySqldbOperate(connct);
-        mySqldbOperate.getCulomNames("t1");
+        System.out.printf(mySqldbOperate.getCuloms("t1","mtest").toString());
     }
     public  void main2(String[] args) {
         // step1 创建freeMarker配置实例

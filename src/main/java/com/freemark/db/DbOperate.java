@@ -10,12 +10,12 @@ public interface DbOperate {
      * 获取字段名
      * @return
      */
-    List<String> getCulomNames(String tableName);
+    List<String> getCulomNames(String tableName,String db);
 
     /**
      * 获取字段
      * @return
      */
-    List<MySqlDbCulomEnpty> getCuloms(String tableName);
+    List<MySqlDbCulomEnpty> getCuloms(String tableName,String db);
 
 }

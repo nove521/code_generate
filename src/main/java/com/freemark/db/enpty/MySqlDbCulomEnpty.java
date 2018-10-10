@@ -82,4 +82,18 @@ public class MySqlDbCulomEnpty implements DbCulomEnpty {
     public void setPrimaryIsAuto(String primaryIsAuto) {
         this.primaryIsAuto = primaryIsAuto;
     }
+
+    @Override
+    public String toString() {
+        return "MySqlDbCulomEnpty{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", typeLong='" + typeLong + '\'' +
+                ", canNull=" + canNull +
+                ", isPrimary=" + isPrimary +
+                ", annotation='" + annotation + '\'' +
+                ", strDefault='" + strDefault + '\'' +
+                ", primaryIsAuto='" + primaryIsAuto + '\'' +
+                '}';
+    }
 }
