@@ -32,7 +32,16 @@ public class MySqlDbCulomEnpty implements DbCulomEnpty {
     }
 
     public void setType(String type) {
-        this.type = type;
+        switch (type){
+            case "VARCHAR":
+                this.type = "String";
+                break;
+            case "INT":
+                this.type = "Integer";
+                break;
+            default:
+                this.type = "String";
+        }
     }
 
     public String getTypeLong() {

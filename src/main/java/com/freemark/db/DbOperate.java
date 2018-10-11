@@ -3,6 +3,7 @@ package com.freemark.db;
 import com.freemark.db.enpty.MySqlDbCulomEnpty;
 
 import java.util.List;
+import java.util.Map;
 
 public interface DbOperate {
 
@@ -13,9 +14,11 @@ public interface DbOperate {
     List<String> getCulomNames(String tableName,String db);
 
     /**
-     * 获取字段
+     * 获取字段信息
      * @return
      */
-    List<MySqlDbCulomEnpty> getCuloms(String tableName,String db);
+    Map<String,MySqlDbCulomEnpty> getCulomsMap(String tableName, String db);
 
+    List<MySqlDbCulomEnpty> getCulomsList(Map<String,MySqlDbCulomEnpty> map);
+    List<MySqlDbCulomEnpty> getCulomsList(String tableName, String db);
 }

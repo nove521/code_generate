@@ -1,38 +1,19 @@
-package ${classPath};
+package ${pacgePath};
 
 public class ${className} {
 
-   private Integer ${Id};
-   private String ${userName};
-   private String ${password};
+<#list tableKey! as key>
+    private ${key.type} ${key.name};
+</#list>
 
-
-
-    public Integer get${Id}(){
-
-        return ${Id};
+<#list tableKey! as key>
+    public void set${key.name?cap_first}(${key.type} ${key.name}){
+        this.${key.name}=${key.name};
     }
 
-    public void set${Id}(Integer ${Id}){
-
-        this.${Id}=${Id};
+    public ${key.type} get${key.name?cap_first}(){
+        return this.${key.name};
     }
 
-    public String get${userName}(){
-        return ${userName};
-    }
-
-    public void set${userName}(String ${userName}){
-        this.${userName}=${userName};
-
-    }
-
-    public String get${password}(){
-        return ${password};
-    }
-
-    public void set${password}(String ${password}){
-        this.${password}=${password};
-    }
-
+</#list>
 }
