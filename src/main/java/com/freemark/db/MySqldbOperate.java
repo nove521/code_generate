@@ -36,7 +36,7 @@ public class MySqldbOperate implements DbOperate {
      */
     private List<MySqlDbCulomEnpty> getCulomByPk(String tableName, String db, DatabaseMetaData databaseMetaData) throws SQLException {
         List<MySqlDbCulomEnpty> mySqlDbCulomEnpties = new ArrayList<MySqlDbCulomEnpty>();
-        ResultSet pkRSet = databaseMetaData.getPrimaryKeys("mtest", null, "t1");
+        ResultSet pkRSet = databaseMetaData.getPrimaryKeys(db, null, tableName);
         while (pkRSet.next()) {
             MySqlDbCulomEnpty mySqlDbCulomEnpty = new MySqlDbCulomEnpty();
             mySqlDbCulomEnpty.setName(pkRSet.getString("COLUMN_NAME"));
