@@ -7,6 +7,7 @@ import java.util.Properties;
 
 public class SystemConfig implements BaseConfig {
 
+    private static SystemConfig systemConfig;
     private Properties config;
 
     private SystemConfig() {
@@ -20,7 +21,9 @@ public class SystemConfig implements BaseConfig {
     }
 
     public static synchronized SystemConfig getSystemConfig() {
-        SystemConfig systemConfig = new SystemConfig();
+        if (systemConfig == null ){
+            systemConfig = new SystemConfig();
+        }
         return systemConfig;
     }
 

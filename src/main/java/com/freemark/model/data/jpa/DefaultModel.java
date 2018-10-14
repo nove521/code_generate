@@ -18,7 +18,7 @@ public abstract class DefaultModel implements BaseModel {
     String modelName;
 
     protected Map<String, Object> map = new HashMap<>();
-    SystemConfig systemConfig;
+    protected static SystemConfig systemConfig = SystemConfig.getSystemConfig();
 
     public DefaultModel() {
 
@@ -37,7 +37,6 @@ public abstract class DefaultModel implements BaseModel {
 
     @Override
     public void initModel() {
-        systemConfig = SystemConfig.getSystemConfig();
         Connct connct = new Connct(systemConfig.getKey("DB_USER"), systemConfig.getKey("DB_PASW"), systemConfig.getKey("DB_NAME"));
         MySqldbOperate operate = new MySqldbOperate(connct);
         List<MySqlDbCulomEnpty> mySqlDbCulomEnpties =operate.getCulomsList(systemConfig.getKey("DB_TABLE_NAME"), systemConfig.getKey("DB_NAME"));
@@ -63,10 +62,7 @@ public abstract class DefaultModel implements BaseModel {
         return map;
     }
 
-    @Override
-    public String getOutPathName() {
-        return null;
-    }
+    public abstract String getOutPathName();
 
     @Override
     public List<String> getPackNames(List<MySqlDbCulomEnpty> name) {
@@ -81,5 +77,24 @@ public abstract class DefaultModel implements BaseModel {
         return packNames;
     }
 
+    protected String setModelNameBySUFFIX(String suffix){
+        StringBuilder className = new StringBuilder(systemConfig.getKey("DB_TABLE_NAME"));
+        className = DbCluomsFormat.firstUpName(className);
+        String newClassName = DbCluomsFormat.humpFormat(className.toString());
+        return newClassName + suffix;
+    }
 
+    protected String setModelNameBySUFFIX2(String suffix){
+        StringBuilder className = new StringBuilder(systemConfig.getKey("DB_TABLE_NAME"));
+        String newClassName = DbCluomsFormat.humpFormat(className.toString());
+        return newClassName + suffix;
+    }
+
+    protected String computePackeByPath(String path){
+        String regx = "src\\main\\java\\";
+        int cur = path.indexOf(regx,1);
+        String newPath = path.substring(cur+regx.length());
+        newPath = newPath.replaceAll("\\\\",".");
+        return newPath;
+    }
 }

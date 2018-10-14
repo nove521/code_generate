@@ -17,7 +17,7 @@ public class JPOIModel extends DefaultModel {
             super.setModelName(setModelNameBySUFFIX(SUFFIX));
         }
         map.put("className",getModelName());
-        map.put("pacgePath",systemConfig.getKey("PACGE_PATH"));
+        map.put("pacgePath",computePackeByPath(getOutPathName()));
     }
 
     @Override
@@ -25,10 +25,5 @@ public class JPOIModel extends DefaultModel {
         return systemConfig.getKey("JPOI_OUT_CLASS_PATH");
     }
 
-    protected String setModelNameBySUFFIX(String suffix){
-        StringBuilder className = new StringBuilder(systemConfig.getKey("DB_TABLE_NAME"));
-        className = DbCluomsFormat.firstUpName(className);
-        String newClassName = DbCluomsFormat.humpFormat(className.toString());
-        return newClassName + suffix;
-    }
+
 }

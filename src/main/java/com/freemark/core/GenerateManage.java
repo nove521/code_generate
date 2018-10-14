@@ -50,6 +50,10 @@ public class GenerateManage implements BaseManage {
             if (null == outPathName) {
                 outPathName = getTemplatesApPath(model);
             }
+            File dirFile = new File(outPathName);
+            if(!dirFile.exists()){
+                dirFile.mkdirs();
+            }
             File docFile = new File(outPathName + "\\" + model.getModelName() + "." + config.getKey("SUFFIX"));
             out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(docFile)));
             template.process(dataMap, out);
