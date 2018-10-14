@@ -59,6 +59,7 @@ public class MySqldbOperate implements DbOperate {
                 culomEnpty.setType(tableRet.getString("TYPE_NAME"));
                 culomEnpty.setTypeLong(tableRet.getString("COLUMN_SIZE"));
                 culomEnpty.setPrimaryIsAuto(tableRet.getString("IS_AUTOINCREMENT"));
+                culomEnpty.setIsPrimary(false);
                 maps.put(culomEnpty.getName(), culomEnpty);
             }
             maps = getTotalCuloms(maps,getCulomByPk(tableName,db,databaseMetaData));
@@ -90,7 +91,7 @@ public class MySqldbOperate implements DbOperate {
         for (MySqlDbCulomEnpty operate : pkList) {
             MySqlDbCulomEnpty culomEnpty = mpas.get(operate.getName());
             if (null != culomEnpty){
-                culomEnpty.setPrimary(true);
+                culomEnpty.setIsPrimary(true);
                 mpas.put(culomEnpty.getName(),culomEnpty);
             }
         }

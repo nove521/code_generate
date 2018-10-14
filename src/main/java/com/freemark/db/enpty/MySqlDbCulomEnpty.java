@@ -39,6 +39,9 @@ public class MySqlDbCulomEnpty implements DbCulomEnpty {
             case "INT":
                 this.type = "Integer";
                 break;
+            case "DATETIME":
+                this.type = "LocalDateTime";
+                break;
             default:
                 this.type = "String";
         }
@@ -60,11 +63,11 @@ public class MySqlDbCulomEnpty implements DbCulomEnpty {
         this.canNull = canNull;
     }
 
-    public boolean isPrimary() {
-        return isPrimary;
+    public String getIsPrimary() {
+        return String.valueOf(isPrimary);
     }
 
-    public void setPrimary(boolean primary) {
+    public void setIsPrimary(boolean primary) {
         isPrimary = primary;
     }
 
