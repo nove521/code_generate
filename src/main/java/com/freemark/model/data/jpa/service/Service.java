@@ -1,0 +1,37 @@
+package com.freemark.model.data.jpa.service;
+
+import com.freemark.model.data.jpa.BOModel;
+import com.freemark.model.data.jpa.DefaultModel;
+import com.freemark.model.data.jpa.VoModel;
+import com.freemark.utils.DbCluomsFormat;
+
+public class Service extends DefaultModel {
+
+    private static final String SUFFIX = "Service";
+
+    public Service(){
+        super();
+    }
+
+    @Override
+    public void initModel() {
+        super.initModel();
+        if (null == getModelName()){
+            super.setModelName(setModelNameBySUFFIX(SUFFIX));
+        }
+        StringBuilder className = new StringBuilder(systemConfig.getKey("DB_TABLE_NAME"));
+        map.put("class",DbCluomsFormat.humpFormat(className.toString()));
+        map.put("suffix",SUFFIX);
+        map.put("className",getModelName());
+        map.put("pacgePath",computePackeByPath(getOutPathName()));
+        map.put("voPacgePath",computePackeByPath(new VoModel().getOutPathName()));
+        map.put("boPacgePath",computePackeByPath(new BOModel().getOutPathName()));
+        map.put("pagePacgePath","com.demo.lottery.framework.dto.page.Page");
+    }
+
+    @Override
+    public String getOutPathName() {
+        return systemConfig.getKey("SERVICE_OUT_CLASS_PATH");
+    }
+
+}
