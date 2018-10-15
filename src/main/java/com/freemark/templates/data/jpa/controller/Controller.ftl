@@ -1,6 +1,5 @@
 package ${pacgePath};
 
-import ${voPacgePath}.${class?cap_first}Vo;
 import ${pagePacgePath};
 import ${ProjdectRootpacgePath}.framework.utils.DateUtils;
 import ${ServicePacgePath}.${class?cap_first}Service;
@@ -8,6 +7,7 @@ import ${boPacgePath}.${class?cap_first}Bo;
 import ${RequestGetPacgePath}.Request${class?cap_first}Get;
 import ${ResponseGetPacgePath}.Response${class?cap_first}Get;
 import ${RequestPostPacgePath}.Request${class?cap_first}Post;
+import ${EntityPacgePath}.${class?cap_first}Entity;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
@@ -33,7 +33,7 @@ public class ${className} {
 
         Response${class?cap_first}Get response = new Response${class?cap_first}Get();
         List<Response${class?cap_first}Get.${class?cap_first}> result = new ArrayList<>();
-        Page<${class?cap_first}Vo> page = ${class}Service.query${class?cap_first}(${class}Bo);
+        Page<${class?cap_first}Entity> page = ${class}Service.query${class?cap_first}(${class}Bo);
         page.getData().forEach(e -> {
             Response${class?cap_first}Get.${class?cap_first} ${class} = new Response${class?cap_first}Get.${class?cap_first}();
             BeanUtils.copyProperties(e, ${class});

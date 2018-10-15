@@ -2,6 +2,7 @@ package com.freemark.model.data.jpa.service;
 
 import com.freemark.model.data.jpa.BOModel;
 import com.freemark.model.data.jpa.DefaultModel;
+import com.freemark.model.data.jpa.JPOIModel;
 import com.freemark.model.data.jpa.VoModel;
 import com.freemark.utils.DbCluomsFormat;
 
@@ -26,6 +27,7 @@ public class Service extends DefaultModel {
         map.put("pacgePath",computePackeByPath(getOutPathName()));
         map.put("voPacgePath",computePackeByPath(new VoModel().getOutPathName()));
         map.put("boPacgePath",computePackeByPath(new BOModel().getOutPathName()));
+        map.put("EntityPacgePath",computePackeByPath(new JPOIModel().getOutPathName()));
         map.put("pagePacgePath","com.demo.lottery.framework.dto.page.Page");
     }
 

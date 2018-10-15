@@ -2,6 +2,7 @@ package com.freemark.model.data.jpa.controller;
 
 import com.freemark.model.data.jpa.BOModel;
 import com.freemark.model.data.jpa.DefaultModel;
+import com.freemark.model.data.jpa.JPOIModel;
 import com.freemark.model.data.jpa.VoModel;
 import com.freemark.model.data.jpa.request.RequestGet;
 import com.freemark.model.data.jpa.request.RequestPost;
@@ -26,7 +27,7 @@ public class Controller extends DefaultModel {
         map.put("className",getModelName());
         map.put("ProjdectRootpacgePath","com.demo.lottery");
         map.put("pacgePath",computePackeByPath(getOutPathName()));
-        map.put("voPacgePath",computePackeByPath(new VoModel().getOutPathName()));
+        map.put("EntityPacgePath",computePackeByPath(new JPOIModel().getOutPathName()));
         map.put("boPacgePath",computePackeByPath(new BOModel().getOutPathName()));
         map.put("pagePacgePath","com.demo.lottery.framework.dto.page.Page");
         map.put("ServicePacgePath",computePackeByPath(systemConfig.getKey("SERVICE_OUT_CLASS_PATH")));

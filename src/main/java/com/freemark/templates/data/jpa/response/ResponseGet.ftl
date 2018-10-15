@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ${className} {
 
-    private List<${tableName?cap_first}> ${tableName};
+    private List<${class?cap_first}> ${class};
 
     private int total;
 
@@ -16,12 +16,12 @@ public class ${className} {
 
     private int pageSize = 10;
 
-    public List<${tableName?cap_first}> get${tableName?cap_first}() {
-        return ${tableName};
+    public List<${class?cap_first}> get${class?cap_first}() {
+        return ${class};
     }
 
-    public void set${tableName?cap_first}(List<${tableName?cap_first}> ${tableName}) {
-        this.${tableName} = ${tableName};
+    public void set${class?cap_first}(List<${class?cap_first}> ${class}) {
+        this.${class} = ${class};
     }
 
     public int getTotal() {
@@ -48,7 +48,7 @@ public class ${className} {
         this.pageSize = pageSize;
     }
 
-    public static class ${tableName?cap_first} {
+    public static class ${class?cap_first} {
     <#list tableKey! as key>
         @ApiModelProperty("${key.annotation}")
         private ${key.type} ${tableKeyNameFormat[key_index]};

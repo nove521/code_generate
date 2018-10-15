@@ -22,7 +22,7 @@ public class ${className}Impl implements ${className}{
     private ${class?cap_first}Dao ${class}Dao;
 
     @Override
-    public Page<${class?cap_first}Vo> query${class?cap_first}(${class?cap_first}Bo ${class}Bo){
+    public Page<${class?cap_first}Entity> query${class?cap_first}(${class?cap_first}Bo ${class}Bo){
         ${class?cap_first}Vo ${class}Vo = new ${class?cap_first}Vo();
         BeanUtils.copyProperties(${class}Bo,${class}Vo);
         return ${cname}.query${class?cap_first}(${class}Vo);

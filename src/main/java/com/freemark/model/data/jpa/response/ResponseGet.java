@@ -2,6 +2,7 @@ package com.freemark.model.data.jpa.response;
 
 import com.freemark.db.enpty.MySqlDbCulomEnpty;
 import com.freemark.model.data.jpa.JPOIModel;
+import com.freemark.utils.DbCluomsFormat;
 
 import java.util.List;
 
@@ -15,6 +16,8 @@ public class ResponseGet extends JPOIModel {
         super.initModel();
         setModelName(PREFIX + setModelNameBySUFFIX(SUFFIX));
         this.map.put("className",getModelName());
+        StringBuilder className = new StringBuilder(systemConfig.getKey("DB_TABLE_NAME"));
+        map.put("class", DbCluomsFormat.humpFormat(className.toString()));
         List<MySqlDbCulomEnpty> list = (List<MySqlDbCulomEnpty>) this.map.get("tableKey");
         formatType(list);
     }
