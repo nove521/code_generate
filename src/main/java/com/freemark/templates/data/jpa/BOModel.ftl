@@ -6,6 +6,8 @@ import ${pn};
 
 public class ${className} {
 
+    private Integer pageNo;
+    private Integer pageSize;
 <#list tableKey! as key>
     // ${key.annotation}
     private ${key.type} ${tableKeyNameFormat[key_index]};
@@ -21,4 +23,19 @@ public class ${className} {
     }
 
 </#list>
+    public int getPageNo() {
+        return pageNo;
+    }
+
+    public void setPageNo(int pageNo) {
+        this.pageNo = pageNo;
+    }
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
 }
