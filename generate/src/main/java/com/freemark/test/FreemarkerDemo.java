@@ -15,7 +15,7 @@ public class FreemarkerDemo {
         BaseConfig config = SystemConfig.getSystemConfig();
         GenerateManage generateManage = new GenerateManage(config);
         ModelFactory modelFactory = new ModelFactoryImpl();
-        BaseModel jpaModel = modelFactory.getModel("com.freemark.model.data.jpa.JPOIModel");
+       /* BaseModel jpaModel = modelFactory.getModel("com.freemark.model.data.jpa.JPOIModel");
         BaseModel boModel = modelFactory.getModel("com.freemark.model.data.jpa.BOModel");
         BaseModel voModel = modelFactory.getModel("com.freemark.model.data.jpa.VoModel");
         BaseModel requestGet = modelFactory.getModel("com.freemark.model.data.jpa.request.RequestGet");
@@ -25,15 +25,17 @@ public class FreemarkerDemo {
         BaseModel ServiceImplModel = modelFactory.getModel("com.freemark.model.data.jpa.service.ServiceImpl");
         BaseModel DaoImplModel = modelFactory.getModel("com.freemark.model.data.jpa.dao.DaoImpl");
         BaseModel DaoModel = modelFactory.getModel("com.freemark.model.data.jpa.dao.Dao");
-        BaseModel RepoModel = modelFactory.getModel("com.freemark.model.data.jpa.dao.Repo");
+        BaseModel RepoModel = modelFactory.getModel("com.freemark.model.data.jpa.dao.Repo");*/
         BaseModel ControllerModel =modelFactory.getModel("com.freemark.model.data.jpa.controller.Controller");
 
-        generateManage
+        generateManage.buildToFile(ControllerModel);
+/*
                 .buildToFile(jpaModel).buildToFile(boModel).buildToFile(voModel)
                 .buildToFile(responseGet)
                 .buildToFile(requestGet)
                 .buildToFile(requestPost)
         .buildToFile(serviceModel).buildToFile(ServiceImplModel).buildToFile(DaoImplModel).buildToFile(DaoModel).buildToFile(RepoModel).buildToFile(ControllerModel);
+*/
 
 //        BaseModel indexmodel = modelFactory.getModel("com.freemark.model.data.react.IndexModel");
 //        BaseModel addandeditModel = modelFactory.getModel("com.freemark.model.data.react.AddAndEditModel");

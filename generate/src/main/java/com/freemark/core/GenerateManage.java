@@ -10,7 +10,6 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;

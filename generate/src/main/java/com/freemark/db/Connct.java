@@ -5,7 +5,7 @@ import java.sql.*;
 public class Connct {
 
     private Connection conn;
-    private static String url = "jdbc:mysql://10.150.20.13:3306/%s";
+    private static String url = "jdbc:mysql://127.0.0.1:3306/%s";
     private static String driver = "com.mysql.cj.jdbc.Driver";
 
     private Connct(){

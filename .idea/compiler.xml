@@ -7,7 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="code_generate" />
+        <module name="generate" />
+        <module name="web_code" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="code_generate" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
