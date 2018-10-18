@@ -39,6 +39,9 @@ public class MySqlDbCulomEnpty implements DbCulomEnpty {
             case "INT":
                 this.type = "Integer";
                 break;
+            case "DOUBLE":
+                this.type = "Double";
+                break;
             case "DATETIME":
                 this.type = "LocalDateTime";
                 break;

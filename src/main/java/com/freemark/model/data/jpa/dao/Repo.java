@@ -1,6 +1,6 @@
 package com.freemark.model.data.jpa.dao;
 
-import com.freemark.model.data.jpa.DefaultModel;
+import com.freemark.model.data.DefaultModel;
 import com.freemark.utils.DbCluomsFormat;
 
 public class Repo extends DefaultModel {

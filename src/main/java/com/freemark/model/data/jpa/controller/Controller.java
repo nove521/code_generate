@@ -1,9 +1,8 @@
 package com.freemark.model.data.jpa.controller;
 
 import com.freemark.model.data.jpa.BOModel;
-import com.freemark.model.data.jpa.DefaultModel;
+import com.freemark.model.data.DefaultModel;
 import com.freemark.model.data.jpa.JPOIModel;
-import com.freemark.model.data.jpa.VoModel;
 import com.freemark.model.data.jpa.request.RequestGet;
 import com.freemark.model.data.jpa.request.RequestPost;
 import com.freemark.model.data.jpa.response.ResponseGet;

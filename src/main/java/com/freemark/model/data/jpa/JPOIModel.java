@@ -1,6 +1,6 @@
 package com.freemark.model.data.jpa;
 
-import com.freemark.utils.DbCluomsFormat;
+import com.freemark.model.data.DefaultModel;
 
 public class JPOIModel extends DefaultModel {
 

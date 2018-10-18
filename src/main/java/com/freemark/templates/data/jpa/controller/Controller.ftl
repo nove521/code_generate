@@ -39,7 +39,7 @@ public class ${className} {
             BeanUtils.copyProperties(e, ${class});
         <#list  tableKey! as key>
             <#if key.type == "LocalDateTime">
-            ${class}.set${tableKeyNameFormat[key_index]}(DateUtils.getDateLocalDateTimeStr(e.get${tableKeyNameFormat[key_index]?cap_first}(), "yyyy-MM-dd HH:mm:ss"));
+            ${class}.set${tableKeyNameFormat[key_index]?cap_first}(DateUtils.getDateLocalDateTimeStr(e.get${tableKeyNameFormat[key_index]?cap_first}(), "yyyy-MM-dd HH:mm:ss"));
             </#if>
         </#list>
             result.add(${class});
@@ -55,6 +55,11 @@ public class ${className} {
 
         ${class?cap_first}Bo ${class}Bo = new ${class?cap_first}Bo();
         BeanUtils.copyProperties(request,${class}Bo);
+          <#list  tableKey! as key>
+              <#if key.type == "LocalDateTime">
+        ${class}Bo.set${tableKeyNameFormat[key_index]?cap_first}(DateUtils.getLocalDateTime(request.get${tableKeyNameFormat[key_index]?cap_first}(), "yyyy-MM-dd HH:mm:ss"));
+              </#if>
+          </#list>
         ${class}Service.add${class?cap_first}(${class}Bo);
 
     }
@@ -67,9 +72,14 @@ public class ${className} {
 
      @ApiOperation(value = "修改")
      @RequestMapping(value = "/{id}/item",method = RequestMethod.PATCH)
-     public void update${class?cap_first}(Request${class?cap_first}Post request){
+     public void update${class?cap_first}(@RequestBody Request${class?cap_first}Post request){
         ${class?cap_first}Bo ${class}Bo = new ${class?cap_first}Bo();
         BeanUtils.copyProperties(request,${class}Bo);
+  <#list  tableKey! as key>
+      <#if key.type == "LocalDateTime">
+        ${class}Bo.set${tableKeyNameFormat[key_index]?cap_first}(DateUtils.getLocalDateTime(request.get${tableKeyNameFormat[key_index]?cap_first}(), "yyyy-MM-dd HH:mm:ss"));
+      </#if>
+  </#list>
         ${class}Service.update${class?cap_first}(${class}Bo);
      }
 

@@ -1,4 +1,4 @@
-package com.freemark.model.data.jpa;
+package com.freemark.model.data;
 
 import com.freemark.config.SystemConfig;
 import com.freemark.db.Connct;

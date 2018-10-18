@@ -7,6 +7,7 @@ import com.freemark.model.BaseModel;
 import com.freemark.model.ModelFactory;
 import com.freemark.model.ModelFactoryImpl;
 import com.freemark.model.data.jpa.JPOIModel;
+import com.freemark.model.data.react.IndexModel;
 
 public class FreemarkerDemo {
 
@@ -33,6 +34,14 @@ public class FreemarkerDemo {
                 .buildToFile(requestGet)
                 .buildToFile(requestPost)
         .buildToFile(serviceModel).buildToFile(ServiceImplModel).buildToFile(DaoImplModel).buildToFile(DaoModel).buildToFile(RepoModel).buildToFile(ControllerModel);
+
+//        BaseModel indexmodel = modelFactory.getModel("com.freemark.model.data.react.IndexModel");
+//        BaseModel addandeditModel = modelFactory.getModel("com.freemark.model.data.react.AddAndEditModel");
+//        BaseModel filterMode = modelFactory.getModel("com.freemark.model.data.react.FilterModel");
+//        BaseModel actionModel = modelFactory.getModel("com.freemark.model.data.react.ActionModel");
+//        BaseModel storeModel = modelFactory.getModel("com.freemark.model.data.react.StoreModel");
+//        generateManage.buildToFile(indexmodel).buildToFile(filterMode).buildToFile(actionModel).buildToFile(storeModel).buildToFile(addandeditModel);
+
     }
 
 }

@@ -1,6 +1,6 @@
 package com.freemark.model.data.jpa.dao;
 
-import com.freemark.model.data.jpa.DefaultModel;
+import com.freemark.model.data.DefaultModel;
 import com.freemark.model.data.jpa.VoModel;
 import com.freemark.utils.DbCluomsFormat;
 

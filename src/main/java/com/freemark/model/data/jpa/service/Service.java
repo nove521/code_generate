@@ -1,7 +1,7 @@
 package com.freemark.model.data.jpa.service;
 
 import com.freemark.model.data.jpa.BOModel;
-import com.freemark.model.data.jpa.DefaultModel;
+import com.freemark.model.data.DefaultModel;
 import com.freemark.model.data.jpa.JPOIModel;
 import com.freemark.model.data.jpa.VoModel;
 import com.freemark.utils.DbCluomsFormat;
