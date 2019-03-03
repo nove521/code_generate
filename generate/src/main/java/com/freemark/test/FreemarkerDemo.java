@@ -28,6 +28,7 @@ public class FreemarkerDemo {
         BaseModel RepoModel = modelFactory.getModel("com.freemark.model.data.jpa.dao.Repo");*/
         BaseModel ControllerModel =modelFactory.getModel("com.freemark.model.data.jpa.controller.Controller");
 
+
         generateManage.buildToFile(ControllerModel);
 /*
                 .buildToFile(jpaModel).buildToFile(boModel).buildToFile(voModel)
