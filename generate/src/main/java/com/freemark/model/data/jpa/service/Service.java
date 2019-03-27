@@ -28,7 +28,7 @@ public class Service extends DefaultModel {
         map.put("voPacgePath",computePackeByPath(new VoModel().getOutPathName()));
         map.put("boPacgePath",computePackeByPath(new BOModel().getOutPathName()));
         map.put("EntityPacgePath",computePackeByPath(new JPOIModel().getOutPathName()));
-        map.put("pagePacgePath","com.demo.lottery.framework.dto.page.Page");
+        map.put("pagePacgePath",systemConfig.getKey("PACGE_PATH") + "." + systemConfig.getKey("PAGE_CLASS_PATH"));
     }
 
     @Override

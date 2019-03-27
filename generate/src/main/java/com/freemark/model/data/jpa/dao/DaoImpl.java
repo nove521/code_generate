@@ -14,6 +14,7 @@ public class DaoImpl extends Dao {
         map.put("EntityPacgePath",computePackeByPath(systemConfig.getKey("JPOI_OUT_CLASS_PATH")));
         map.put("boPacgePath",computePackeByPath(new BOModel().getOutPathName()));
         map.put("RepoPacgePath",computePackeByPath(new Repo().getOutPathName()));
+        map.put("DefaultDaoPacgePath", systemConfig.getKey("PACGE_PATH") + "." + systemConfig.getKey("DEFAULTDAO_PACGE_PATH"));
     }
 
     @Override

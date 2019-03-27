@@ -24,11 +24,11 @@ public class Controller extends DefaultModel {
         map.put("class", DbCluomsFormat.humpFormat(className.toString()));
         map.put("suffix",SUFFIX);
         map.put("className",getModelName());
-        map.put("ProjdectRootpacgePath","com.demo.lottery");
+        map.put("ProjdectRootpacgePath",systemConfig.getKey("PACGE_PATH"));
         map.put("pacgePath",computePackeByPath(getOutPathName()));
         map.put("EntityPacgePath",computePackeByPath(new JPOIModel().getOutPathName()));
         map.put("boPacgePath",computePackeByPath(new BOModel().getOutPathName()));
-        map.put("pagePacgePath","com.demo.lottery.framework.dto.page.Page");
+        map.put("pagePacgePath",systemConfig.getKey("PACGE_PATH") + "." + systemConfig.getKey("PAGE_CLASS_PATH"));
         map.put("ServicePacgePath",computePackeByPath(systemConfig.getKey("SERVICE_OUT_CLASS_PATH")));
         map.put("RequestGetPacgePath",computePackeByPath(new RequestGet().getOutPathName()));
         map.put("ResponseGetPacgePath",computePackeByPath(new ResponseGet().getOutPathName()));

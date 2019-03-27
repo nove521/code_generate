@@ -21,7 +21,7 @@ public class Repo extends DefaultModel {
         map.put("className",getModelName());
         map.put("pacgePath",computePackeByPath(getOutPathName()));
         map.put("EntityPacgePath",computePackeByPath(systemConfig.getKey("JPOI_OUT_CLASS_PATH")));
-
+        map.put("BaseRepoPacgePath",systemConfig.getKey("PACGE_PATH") + "." + systemConfig.getKey("BASE_REPO_PACGE_PATH"));
     }
 
     @Override

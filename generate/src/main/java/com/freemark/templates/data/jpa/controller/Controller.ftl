@@ -19,7 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/manager/admin/{adminUser}/${tableName?replace("_","-")}")
-@Api(tags = {"模块"})
+@Api(tags = {"模块"}) // TODO EDIT
 public class ${className} {
 
     @Autowired
